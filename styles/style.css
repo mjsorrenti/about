@@ -1,0 +1,191 @@
+/*******************************************************************
+Set page background & main layout
+*******************************************************************/
+
+* {
+    font-size: 10px;
+}
+
+body {    
+    margin: 0 auto;
+    max-width: 1000px;
+    min-width: 400px;
+    background-color: rgb(200,200,220);
+    padding: 0 2%;
+}
+
+
+/*****************************************************************
+Header settings
+*****************************************************************/
+
+h1 {
+    font-size: 4rem;
+    text-align: center;
+}
+
+/*****************************************************************
+Style navigation tabs
+*****************************************************************/
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    width: 310px;
+    margin: 0 auto;
+}
+
+nav li {
+    display: inline-block;
+}
+
+/* Tab highlighting is done using a semitransparent gradient background on each 
+tab with a background color fading in and out behind it. */
+nav a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    width: 60px;
+    text-align: center;
+    padding: 5px 20px;
+    border-radius: 28px 28px 0 0;
+    background-color: rgb(200,200,220);
+    background-image: linear-gradient(to bottom, rgba(200,200,220,1), rgba(200,200,220,0.9) 85%, rgba(200,200,220,0) 86%, rgba(200,200,220,1));
+    transition: background-color 0.5s;
+}
+
+nav a:hover {
+    background-color: gray;
+}
+
+.selectedTab {
+    background-color: blue;
+    text-shadow: 0 1px 0 rgba(25,25,25,0.5);
+}
+
+/*******************************************************************
+Set up contact buttons
+*******************************************************************/
+
+#contactinfo ul {
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 2;
+}
+
+#contactinfo li {
+    position: relative;
+}
+
+#contactinfo img {
+    position: absolute;
+    top: 19px;
+    right: 9px;
+    transform: rotate(-45deg);
+    transition: transform 1s;
+}
+
+#contactinfo a {
+    font-size: 1.5rem;
+    box-sizing: border-box;
+    display: block;
+    background-color: gray;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    margin: 10px 0;
+    line-height: 50px;
+    overflow: hidden;
+    color: rgba(0,0,0,0);
+    text-decoration: none;
+    padding-left: 15px;
+    /*background-image: url(block.png);*/
+    background-position: right;
+    background-repeat: no-repeat;
+    transition: width 1s, color 1s;
+}
+
+#contactinfo a:hover {
+    width: 220px;
+    color: white;
+    background-color: blue;
+}
+
+#contactinfo a:hover > img {
+    transform: rotate(45deg);
+}
+
+/*****************************************************************
+Syle section headers
+*****************************************************************/
+
+section {
+    position: relative;
+}
+
+section > div {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border: solid 1px gray;
+    border-radius: 35px;
+    background-color: skyblue;
+    z-index: 1;
+}
+
+article * {
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    border: solid 1px gray;
+    background-color: skyblue;
+    
+    height: 50px;
+    line-height: 50px;
+    margin-left: 35px;
+    padding-left: 50px;
+    position: relative;
+    top: 12px;
+}
+
+h3 {
+    font-size: 2rem;
+    margin: 0.5rem 0 0;
+}
+
+article {
+    border: solid 1px gray;
+    background-color: white;
+    margin: 5px 25px;
+    padding: 0 3%;
+}
+
+article li {
+    padding: 0.3rem 0;
+}
+
+article p {
+    margin: 0.5rem 0;
+}
+
+.position {
+    font-weight: bold;
+}
+
+.employmentdates {
+    font-style: italic;
+}
+
+.school {
+    font-weight: bold;
+}
