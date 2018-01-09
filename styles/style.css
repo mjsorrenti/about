@@ -50,8 +50,6 @@ nav li {
     display: inline-block;
 }
 
-/* Tab highlighting is done using a semitransparent gradient background on each 
-tab with a background color fading in and out behind it. */
 nav a {
     font-size: 1.5rem;
     font-family: 'Donegal One', serif;
@@ -65,8 +63,7 @@ nav a {
 }
 
 nav a:hover {
-    background-image: /*linear-gradient(to bottom, rgba(100,100,220,0), rgba(100,100,220,1));*/
-                        radial-gradient(ellipse farthest-side at bottom, rgba(200,200,220,1), rgba(200,200,220,0));
+    background-image: radial-gradient(ellipse farthest-side at bottom, rgba(200,200,220,1), rgba(200,200,220,0));
 }
 
 .selectedTab {
@@ -140,35 +137,19 @@ section {
     position: relative;
 }
 
+/* These are the circles that appear on the left of the section headers */
 section > div {
     position: absolute;
     width: 70px;
     height: 70px;
     border: solid 1px gray;
     border-radius: 35px;
-    /*background-color: skyblue;*/
     z-index: 1;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-h2 {
-    font-size: 2.5rem;
-    font-family: 'Donegal One', serif;
-    color: white;
-    text-transform: uppercase;
-    border: solid 1px gray;
-    /*background-color: skyblue;*/
-    
-    height: 50px;
-    line-height: 50px;
-    margin-left: 35px;
-    padding-left: 50px;
-    position: relative;
-    top: 12px;
-}
-
-/* Set background images for each section header */
+/* Set background images for each section header cirlce*/
 #professionalhighlights div {
     background-image: url(../images/Star.png),
                         url(../images/blue-marker-scribbles-square.png);
@@ -205,7 +186,26 @@ h2 {
     background-image: url(../images/black-marker-scribbles-banner.png);
 }
 
-/*Set article styles */
+/* These are the rectangles with the section header title text */
+h2 {
+    font-size: 2.5rem;
+    font-family: 'Donegal One', serif;
+    color: white;
+    text-transform: uppercase;
+    border: solid 1px gray;
+    height: 50px;
+    line-height: 50px;
+    margin-left: 35px;
+    padding-left: 50px;
+    position: relative;
+    top: 12px;
+}
+
+
+
+/****************************************************************
+*Set article styles 
+*****************************************************************/
 article * {
     font-size: 1.8rem;
 }
@@ -220,6 +220,9 @@ article {
     background-color: white;
     margin: 5px 25px;
     padding: 1% 3%;
+    background-size: contain;
+    background-position: left;
+    background-repeat: no-repeat;
 }
 
 article a {
@@ -235,6 +238,7 @@ article p {
     margin: 0.5rem 0;
 }
 
+/* The next three rules format text specifically on the Resume page */
 .position {
     font-weight: bold;
 }
@@ -245,4 +249,45 @@ article p {
 
 .school {
     font-weight: bold;
+}
+
+/* The following rules apply background images to appropriate articles on the Resume page */
+.dassault {
+    background-image: url(../images/3DS_Logo.png);
+}
+
+.bps {
+    background-image: url(../images/BPS-logo.png);
+}
+
+.mcmaster {
+    background-image: url(../images/mcmaster-carr-logo.png);
+}
+
+.duke {
+    background-image: url(../images/duke-logo.png);
+}
+
+.usc {
+    background-image: url(../images/usc-logo.png);
+}
+
+.bryant {
+    background-image: url(../images/bryant-logo.png);
+}
+
+
+
+/**************************************************************************
+*  Style footer
+**************************************************************************/
+
+footer {
+    position: absolute;
+    right: 1%;
+}
+
+footer p {
+    font-size: 1.5rem;
+    text-align: right;
 }
