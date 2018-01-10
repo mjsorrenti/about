@@ -150,6 +150,24 @@ section > div {
 }
 
 /* Set background images for each section header cirlce*/
+#aboutme div {
+    background-image: url(../images/Info.png),
+                        url(../images/green-marker-scribbles-square.png);
+}
+
+#aboutme h2 {
+    background-image: url(../images/green-marker-scribbles-banner.png);
+}
+
+#aboutthissite div {
+    background-image: url(../images/Brackets.png),
+                        url(../images/blue-marker-scribbles-square.png);
+}
+
+#aboutthissite h2 {
+    background-image: url(../images/blue-marker-scribbles-banner.png);
+}
+
 #professionalhighlights div {
     background-image: url(../images/Star.png),
                         url(../images/blue-marker-scribbles-square.png);
@@ -236,6 +254,12 @@ article li {
 
 article p {
     margin: 0.5rem 0;
+}
+
+article img {
+    width: 20%;
+    float: right;
+    padding-left: 3%;
 }
 
 /* The next three rules format text specifically on the Resume page */
