@@ -149,6 +149,22 @@ section > div {
     background-repeat: no-repeat;
 }
 
+/* These are the rectangles with the section header title text */
+h2 {
+    font-size: 2.5rem;
+    font-family: 'Donegal One', serif;
+    color: white;
+    text-transform: uppercase;
+    border: solid 1px gray;
+    height: 50px;
+    line-height: 50px;
+    margin-left: 35px;
+    padding-left: 50px;
+    position: relative;
+    top: 12px;
+}
+
+
 /* Set background images for each section header cirlce*/
 #aboutme div {
     background-image: url(../images/Info.png),
@@ -202,21 +218,6 @@ section > div {
 
 #technicalskills h2 {
     background-image: url(../images/black-marker-scribbles-banner.png);
-}
-
-/* These are the rectangles with the section header title text */
-h2 {
-    font-size: 2.5rem;
-    font-family: 'Donegal One', serif;
-    color: white;
-    text-transform: uppercase;
-    border: solid 1px gray;
-    height: 50px;
-    line-height: 50px;
-    margin-left: 35px;
-    padding-left: 50px;
-    position: relative;
-    top: 12px;
 }
 
 
@@ -314,4 +315,38 @@ footer {
 footer p {
     font-size: 1.5rem;
     text-align: right;
+}
+
+
+/*************************************************************************
+* The following styles are specific to the Portfolio page and
+* override some styles set previously throughout the site
+*************************************************************************/
+
+#portfolio > p {
+    font-size: 1.8rem;
+    padding: 1% 5%;
+}
+
+#portfolio > p a {
+    font-size: 1.8rem;
+    text-decoration: none;
+    color: rgb(50,50,200);
+}
+
+#portfolio h2 {
+    margin-left: 0;
+    position: static;
+}
+
+#portfolio section:nth-of-type(3n+1) h2 {
+    background-image: url(../images/green-marker-scribbles-banner.png);
+}
+
+#portfolio section:nth-of-type(3n+2) h2 {
+    background-image: url(../images/blue-marker-scribbles-banner.png);
+}
+
+#portfolio section:nth-of-type(3n+3) h2 {
+    background-image: url(../images/red-marker-scribbles-banner.png);
 }
