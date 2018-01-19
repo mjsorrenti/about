@@ -15,6 +15,16 @@ html {
     background-size: 50%, 100px;
 }
 
+/* Hide the header graphic when the screen gets too small */
+@media screen and (max-width: 700px) {
+    html {
+        background-image: url(../images/linen-BG.png);
+        background-position: center;
+        background-repeat: repeat;
+        background-size: 100px;
+    }
+}
+
 body {    
     margin: 0 auto;
     max-width: 1000px;
@@ -42,21 +52,23 @@ Style navigation tabs
 nav ul {
     list-style: none;
     padding: 0;
-    width: 310px;
+    width: 350px;
     margin: 0 auto;
+    display: flex;
 }
 
 nav li {
-    display: inline-block;
+    /*display: inline-block;*/
+    align-items: center;
 }
 
 nav a {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-family: 'Donegal One', serif;
     text-decoration: none;
     color: inherit;
     display: inline-block;
-    width: 60px;
+    /*width: 80px;*/
     text-align: center;
     color: rgb(25,25,25);
     padding: 5px 20px;
@@ -74,6 +86,10 @@ nav a:hover {
 /*******************************************************************
 Set up contact buttons
 *******************************************************************/
+
+#contactinfo > a {
+    display: none;
+}
 
 #contactinfo ul {
     list-style: none;
@@ -99,7 +115,7 @@ Set up contact buttons
     transition: transform 1s;
 }
 
-#contactinfo a {
+#contactinfo li a {
     font-size: 1.4rem;
     box-sizing: border-box;
     display: block;
@@ -119,15 +135,75 @@ Set up contact buttons
     transition: width 1s, color 1s;
 }
 
-#contactinfo a:hover {
+#contactinfo li a:hover {
     width: 220px;
     color: white;
     background-color: blue;
 }
 
-#contactinfo a:hover > img {
+#contactinfo li a:hover > img {
     transform: rotate(45deg);
 }
+
+
+/* The following rules collapse the contact icons into a menu for small screens */
+@media screen and (max-width: 700px) {
+    #contactinfo {
+        position: absolute;
+        top: 0;
+    }
+    
+    #contactinfo > a {
+        display: block;
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        height: 0;
+        padding-top: 30px;
+        width: 30px;
+        overflow: hidden;
+    }
+    
+    #open-contact {
+        display: block;
+        background-image: repeating-linear-gradient(rgb(125,125,125), rgb(125,125,125) 6px, transparent 6px, transparent 12px);
+    }
+    
+    #contactinfo:target #open-contact {
+        visibility: hidden;
+    }
+    
+    #close-contact {
+        background-image: linear-gradient(45deg, transparent 18px, rgb(125,125,125) 18px, rgb(125,125,125) 25px, transparent 0), linear-gradient(-45deg, transparent 18px, rgb(125,125,125) 18px, rgb(125,125,125) 25px, transparent 0);
+        visibility: hidden;
+    }
+    
+    #contactinfo:target #close-contact {
+        visibility: visible;
+    }
+    
+    #contactinfo ul {
+        display: none;
+        position: absolute;
+        top: 35px;
+        right: auto;
+    }
+    
+    #contactinfo:target ul {
+        display: block;
+    }
+    
+    #contactinfo img {
+        top: 10px;
+    }
+    
+    #contactinfo li a {
+        width: 220px;
+        overflow: visible;
+        color: white;
+    }
+}
+
 
 /*****************************************************************
 Syle section headers
@@ -162,6 +238,23 @@ h2 {
     padding-left: 50px;
     position: relative;
     top: 12px;
+}
+
+/* This media query restyles the headers on smaller screens to remove the circles and allow
+ * the text to break more naturally
+*/
+@media screen and (max-width: 700px) {
+    section > div {
+        display: none;
+    }
+    
+    h2 {
+        height: auto;
+        line-height: normal;
+        margin: 12px 0;
+        padding: 10px 20px;
+        position: static;
+    }
 }
 
 
@@ -263,7 +356,14 @@ article img {
     padding-left: 3%;
 }
 
-/* The next three rules format text specifically on the Resume page */
+/* Increase the image width slightly on smaller screens so it reamins legible */
+@media screen and (max-width: 700px) {
+    article img {
+        width: 35%;
+    }
+}
+
+/* The next three rules format text classes specifically on the Resume page */
 .position {
     font-weight: bold;
 }
@@ -317,6 +417,20 @@ footer p {
     text-align: right;
 }
 
+/* Shrink the footer image when it gets too wide for the screen */
+@media screen and (max-width: 1100px) {
+    footer img {
+        width: 525px;
+    }
+}
+
+/* Hide the footer image when the screen gets entirely too small */
+@media screen and (max-width: 575px) {
+    footer img {
+        display: none;
+    }
+}
+
 
 /*************************************************************************
 * The following styles are specific to the Portfolio page and
@@ -326,6 +440,7 @@ footer p {
 #portfolio > p {
     font-size: 1.8rem;
     padding: 1% 5%;
+    margin: 0 25px;
 }
 
 #portfolio > p a {
@@ -356,6 +471,76 @@ footer p {
     width: 45%;
 }
 
-#portfolio section li img {
+#portfolio section figure {
+    border-top: 1px solid gray;
+    margin: 0;
+    padding: 2% 0;
+    clear: right;
+}
+
+#portfolio section figure:last-of-type + p {
+    border-top: 1px solid gray;
+    padding-top: 2%;
+    clear: both;
+}
+
+#portfolio section figure img {
+    width: 60%;
+    border: 1px solid gray;
+    padding: 0;
+}
+
+#portfolio section figure figcaption {
+    float: right;
+    width: 37%;
+    padding-bottom: 5px;
+}
+
+#portfolio section iframe {
+    display: block;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 700px) {
+    #portfolio section iframe {
+        width: 320px
+}
+}
+
+#visibility-link {
+    font-size: 2.5rem;
+    font-weight: bold;
+    float: right;
+    margin-right: 20%;
+    margin-top: 8%;
+    padding: 8px 5%;
+    text-align: center;
+    background-color: rgba(50,50,220,0.5);
+    color: white;
+    border-radius: 10px;
+    border: 1px solid rgb(50,50,220);
+}
+
+#visibility-link:hover {
+    background-color: rgb(50,50,220);
+}
+
+.disclaimer {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: #ce4747;
+    padding: 5px 5%;
+}
+
+#portfolio section table {
+    border-collapse: collapse;
+}
+
+#portfolio section td {
+    border-top: 1px solid gray;
+}
+
+#portfolio section td img {
     width: auto;
+    padding-right: 10px;
 }
