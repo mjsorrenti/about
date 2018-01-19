@@ -350,3 +350,12 @@ footer p {
 #portfolio section:nth-of-type(3n+3) h2 {
     background-image: url(../images/red-marker-scribbles-banner.png);
 }
+
+#portfolio section img {
+    float: none;
+    width: 45%;
+}
+
+#portfolio section li img {
+    width: auto;
+}
