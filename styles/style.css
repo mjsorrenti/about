@@ -363,7 +363,7 @@ article img {
     }
 }
 
-/* The next three rules format text classes specifically on the Resume page */
+/* The next 4 rules format text classes specifically on the Resume page */
 .position {
     font-weight: bold;
 }
@@ -373,6 +373,10 @@ article img {
 }
 
 .school {
+    font-weight: bold;
+}
+
+#technicalskills article > ul > li {
     font-weight: bold;
 }
 
@@ -529,7 +533,12 @@ footer p {
     font-size: 1.5rem;
     font-style: italic;
     color: #ce4747;
-    padding: 5px 5%;
+    margin: 5px 5%;
+}
+
+.disclaimer a {
+    font: inherit;
+    color: inherit;
 }
 
 #portfolio section table {
