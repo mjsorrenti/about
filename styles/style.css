@@ -28,7 +28,7 @@ html {
 body {    
     margin: 0 auto;
     max-width: 1000px;
-    min-width: 400px;
+    min-width: 350px;
     /*background-color: rgb(200,200,220);*/
     padding: 0 2%;
 }
@@ -43,6 +43,13 @@ h1 {
     font-family: 'Donegal One', serif;
     text-align: center;
     color: rgb(25,25,25);
+}
+
+/* On small screens add some padding to the top to avoid collision with the hamburger menu */
+@media screen and (max-width: 500px) {
+    h1 {
+        padding-top: 10px;
+    }
 }
 
 /*****************************************************************
@@ -138,7 +145,7 @@ Set up contact buttons
 #contactinfo li a:hover {
     width: 220px;
     color: white;
-    background-color: blue;
+    background-color: rgb(50,50,220);
 }
 
 #contactinfo li a:hover > img {
@@ -162,6 +169,7 @@ Set up contact buttons
         padding-top: 30px;
         width: 30px;
         overflow: hidden;
+        border-radius: 4px;
     }
     
     #open-contact {
@@ -202,6 +210,8 @@ Set up contact buttons
         overflow: visible;
         color: white;
     }
+    
+
 }
 
 
@@ -363,6 +373,13 @@ article img {
     }
 }
 
+@media screen and (max-width: 500px) {
+    article img {
+        width: 50%;
+    }
+}
+
+
 /* The next 4 rules format text classes specifically on the Resume page */
 .position {
     font-weight: bold;
@@ -500,6 +517,20 @@ footer p {
     padding-bottom: 5px;
 }
 
+/* Remove the caption floats on small screens and stack everything */
+@media screen and (max-width: 500px) {
+    #portfolio section figure figcaption {
+        float: none;
+        width: 100%;
+    }
+    
+    #portfolio section figure img {
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
 #portfolio section iframe {
     display: block;
     margin: 0 auto;
@@ -507,7 +538,7 @@ footer p {
 
 @media screen and (max-width: 700px) {
     #portfolio section iframe {
-        width: 320px
+        width: 280px
 }
 }
 
@@ -515,18 +546,19 @@ footer p {
     font-size: 2.5rem;
     font-weight: bold;
     float: right;
-    margin-right: 20%;
-    margin-top: 8%;
+    margin-right: 15%;
+    margin-top: 5%;
     padding: 8px 5%;
     text-align: center;
     background-color: rgba(50,50,220,0.5);
-    color: white;
+    color: rgb(50,50,220);
     border-radius: 10px;
     border: 1px solid rgb(50,50,220);
 }
 
 #visibility-link:hover {
     background-color: rgb(50,50,220);
+    color: white;
 }
 
 .disclaimer {
