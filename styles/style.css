@@ -546,14 +546,22 @@ footer p {
     font-size: 2.5rem;
     font-weight: bold;
     float: right;
-    margin-right: 15%;
-    margin-top: 5%;
+    margin-right: 20%;
+    margin-top: 8%;
     padding: 8px 5%;
     text-align: center;
     background-color: rgba(50,50,220,0.5);
     color: rgb(50,50,220);
     border-radius: 10px;
     border: 1px solid rgb(50,50,220);
+}
+
+/* Change the margins for the button on small screens so it doesn't break the line */
+@media screen and (max-width:500px) {
+    #visibility-link {
+        margin-right: 5%;
+        margin-top: 5%;
+    }
 }
 
 #visibility-link:hover {
