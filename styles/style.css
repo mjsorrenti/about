@@ -233,6 +233,13 @@ section > div {
     z-index: 1;
     background-position: center;
     background-repeat: no-repeat;
+    transform: rotate(0);
+    transition: transform 1s;
+}
+
+section.expanded > div {
+    transform: rotate(1turn);
+    transition: transform 1s;
 }
 
 /* These are the rectangles with the section header title text */
@@ -248,6 +255,13 @@ h2 {
     padding-left: 50px;
     position: relative;
     top: 12px;
+    box-shadow: 3px 3px 1px gray;
+    transition: box-shadow 1s;
+    cursor: pointer;
+}
+
+section.expanded h2 {
+    box-shadow: 0 0 0;
 }
 
 /* This media query restyles the headers on smaller screens to remove the circles and allow
@@ -332,19 +346,29 @@ article * {
     font-size: 1.8rem;
 }
 
-h3 {
-    font-size: 2rem;
-    margin: 0.5rem 0 0;
-}
-
 article {
     border: solid 1px gray;
     background-color: white;
-    margin: 5px 25px;
-    padding: 1% 3%;
     background-size: contain;
     background-position: left;
     background-repeat: no-repeat;
+    transform: scale(1, 0);
+    transform-origin: top;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 1s;
+}
+
+section.expanded article {
+    transform: scale(1, 1);
+    max-height: 1200px;
+    margin: 5px 25px;
+    padding: 1% 3%;
+}
+
+h3 {
+    font-size: 2rem;
+    margin: 0.5rem 0 0;
 }
 
 article a {
@@ -438,20 +462,20 @@ footer p {
     text-align: right;
 }
 
-/* Shrink the footer image when it gets too wide for the screen */
+/* Shrink the footer image when it gets too wide for the screen 
 @media screen and (max-width: 1100px) {
     footer img {
         width: 525px;
     }
 }
 
-/* Hide the footer image when the screen gets entirely too small */
+/* Hide the footer image when the screen gets entirely too small 
 @media screen and (max-width: 575px) {
     footer img {
         display: none;
     }
 }
-
+*/
 
 /*************************************************************************
 * The following styles are specific to the Portfolio page and
@@ -471,25 +495,85 @@ footer p {
 }
 
 #portfolio h2 {
-    margin-left: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: rgb(25,25,25);
+    margin: 20px 0 0;
+    padding: 0;
     position: static;
+    text-align: center;
+    /*line-height: 200px;*/
+    height: 200px;
+    box-shadow: 0 0 0;
+    background-size: cover;
+    background-position: center;
+    transform-origin: top;
+    transition: all 0.5s;
 }
 
-#portfolio section:nth-of-type(3n+1) h2 {
-    background-image: url(../images/green-marker-scribbles-banner.png);
+#portfolio section#mec h2 {
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0.7), rgba(255,255,255,0.7)),
+                        url(../images/EC-vision-mockup.png);
 }
 
-#portfolio section:nth-of-type(3n+2) h2 {
-    background-image: url(../images/blue-marker-scribbles-banner.png);
+#portfolio section#web h2 {
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0.7), rgba(255,255,255,0.7)),
+                        url(../images/bps-site.png);
 }
 
-#portfolio section:nth-of-type(3n+3) h2 {
-    background-image: url(../images/red-marker-scribbles-banner.png);
+#portfolio section#urt h2 {
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0.7), rgba(255,255,255,0.7)),
+                        url(../images/usability-test-BG.png);
 }
 
+
+#portfolio section#vis h2 {
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0.7), rgba(255,255,255,0.7)),
+                        url(../images/visibility-screenshot.png);
+}
+
+#portfolio section#mis h2 {
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0.7), rgba(255,255,255,0.7)),
+                        url(../images/Designer-CFD-Balsamiq.png);
+}
+
+#portfolio section {
+    max-height: 2000px;
+    transition: all 1s;
+}
+
+#portfolio h2:hover {
+    transform: scaleY(0.9);
+}
+
+#portfolio section.expanded h2 {
+    height: 80px;
+}
+
+#portfolio section.removed {
+    max-height: 0px;
+    transform: scaleY(0);
+}
+
+/* Allow more expansion room for articles on the portfolio page since they can get tall,
+   particularly on narrow screens. */
+#portfolio section.expanded article {
+    max-height: 2000px;
+}
+
+
+/* Images interspersed with article text appear at no more than 45% width */
 #portfolio section img {
     float: none;
     width: 45%;
+}
+
+/* Images at the top of an article should be full size and centered */
+#portfolio section article > img {
+    width: auto;
+    max-width: 100%;
+    padding: 0;
 }
 
 #portfolio section figure {
