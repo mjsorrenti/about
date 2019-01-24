@@ -8,22 +8,23 @@ Set page background & main layout
 }
 
 html {
-    background-image: url(../images/about-header.png),
+    /*background-image: url(../images/about-header.png),
                         url(../images/linen-BG.png);
     background-position: top left, center;
     background-repeat: no-repeat, repeat;
-    background-size: 50%, 100px;
+    background-size: 50%, 100px;*/
+    background-color: white;
 }
 
 /* Hide the header graphic when the screen gets too small */
-@media screen and (max-width: 700px) {
+/*@media screen and (max-width: 700px) {
     html {
         background-image: url(../images/linen-BG.png);
         background-position: center;
         background-repeat: repeat;
         background-size: 100px;
     }
-}
+}*/
 
 body {    
     margin: 0 auto;
@@ -39,8 +40,8 @@ Header settings
 *****************************************************************/
 
 h1 {
-    font-size: 4rem;
-    font-family: 'Donegal One', serif;
+    font-size: 6rem;
+    font-family: 'Permanent Marker', cursive;
     text-align: center;
     color: rgb(25,25,25);
 }
@@ -70,8 +71,8 @@ nav li {
 }
 
 nav a {
-    font-size: 1.8rem;
-    font-family: 'Donegal One', serif;
+    font-size: 3rem;
+    font-family: 'Permanent Marker', cursive;
     text-decoration: none;
     color: inherit;
     display: inline-block;
@@ -136,6 +137,7 @@ Set up contact buttons
     color: rgba(0,0,0,0);
     text-decoration: none;
     padding-left: 15px;
+    box-shadow: -3px 3px 2px rgb(80,80,80);
     /*background-image: url(block.png);*/
     background-position: right;
     background-repeat: no-repeat;
@@ -244,8 +246,8 @@ section.expanded > div {
 
 /* These are the rectangles with the section header title text */
 h2 {
-    font-size: 2.5rem;
-    font-family: 'Donegal One', serif;
+    font-size: 3rem;
+    font-family: 'Permanent Marker', cursive;
     color: white;
     text-transform: uppercase;
     border: solid 1px gray;
